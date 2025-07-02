@@ -360,6 +360,103 @@
   }
 }
 
+/* Navbar personalizada */
+.navbar {
+  width: 100%;
+  background: var(--primary-turquoise, #1ec6b6);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  .navbar-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+
+  .navbar-logo-img {
+    height: 48px;
+    width: auto;
+    border-radius: 50%; // bordas arredondadas
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.08) rotate(-3deg);
+    }
+  }
+
+  .navbar-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+
+    li {
+      a {
+        color: #fff;
+        font-weight: 600;
+        font-family: inherit;
+        text-decoration: none;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        padding: 0.5rem 1.1rem;
+        border-radius: 22px;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+
+        &:hover,
+        &:focus {
+          background: var(--soft-beige, #fff8f0);
+          color: var(--primary-turquoise, #1ec6b6);
+          box-shadow: 0 2px 8px rgba(30,198,182,0.08);
+        }
+      }
+
+      .btn.btn-secondary {
+        background: #fff;
+        color: var(--primary-turquoise, #1ec6b6);
+        font-weight: 700;
+        border: none;
+        box-shadow: 0 2px 8px rgba(30,198,182,0.10);
+        transition: background 0.2s, color 0.2s;
+
+        &:hover,
+        &:focus {
+          background: var(--primary-turquoise, #1ec6b6);
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+/* Responsividade para navbar */
+@media (max-width: 900px) {
+  .navbar .navbar-links {
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .navbar .navbar-logo-img {
+    height: 38px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .navbar-content {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0.5rem 0.5rem;
+  }
+  .navbar .navbar-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .hero-content,
